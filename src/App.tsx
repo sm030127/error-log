@@ -8,8 +8,8 @@ import * as XLSX from "xlsx"; // Import the xlsx library
 import StyledButton from "../src/components/StyledButton";
 import styled from "styled-components";
 
-import { placeholderText } from "./constants";
-import { configureCellAlignment } from "./utilities";
+// import { placeholderText } from "./constants";
+// import { configureCellAlignment } from "./utilities";
 
 const StyledHeading = styled.h1`
   color: #0c97ed;
@@ -26,7 +26,7 @@ import {
 const App: React.FC = () => {
   const gridRef = useRef<AgGridReact>(null);
   const [rowData, setRowData] = useState<Questions[]>(row);
-  const [columnDefs, setColumnDefs] = useState<ColDef[]>(columns);
+  const [columnDefs, setColumnDefs] = useState<ColDef[]>([]);
   const defaultColDef = useMemo(
     () => ({
       sortable: true,
@@ -37,9 +37,12 @@ const App: React.FC = () => {
   );
 
   useEffect(() => {
-    const cols = columnDefs;
-    cols.forEach((col) => {});
+    setColumnDefs(columns);
   }, []);
+  // useEffect(() => {
+  //   const cols = columnDefs;
+  //   cols.forEach((col) => {});
+  // }, []);
 
   // Function to handle Excel export using xlsx
   const onExportClick = () => {

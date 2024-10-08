@@ -127,19 +127,19 @@ export const columnDefs = [
     field: "date",
     editable: true,
     suppressClickEdit: true,
-    valueParser: (params) => {
-      const parsedDate = new Date(params.newValue);
-      // Check if the parsed date is valid
-      return isNaN(parsedDate) ? null : parsedDate.toISOString().split("T")[0]; // Convert to YYYY-MM-DD format
-    },
-    valueSetter: (params) => {
-      const date = new Date(params.newValue);
-      if (isNaN(date)) {
-        alert("Invalid date format. Please enter a valid date.");
-        return false; // Prevent the value from being set
-      }
-      return true; // Allow the value to be set
-    },
+    // valueParser: (params) => {
+    //   const parsedDate = new Date(params.newValue);
+    //   // Check if the parsed date is valid
+    //   return isNaN(parsedDate) ? null : parsedDate.toISOString().split("T")[0]; // Convert to YYYY-MM-DD format
+    // },
+    // valueSetter: (params) => {
+    //   const date = new Date(params.newValue);
+    //   if (isNaN(date)) {
+    //     alert("Invalid date format. Please enter a valid date.");
+    //     return false; // Prevent the value from being set
+    //   }
+    //   return true; // Allow the value to be set
+    // },
   },
   {
     headerName: "Difficulty",

@@ -2,7 +2,7 @@ import { AgGridReact } from "ag-grid-react";
 import { defaultColDef, Questions } from "../interfaces/commonInterfaces";
 import { type ColDef } from "ag-grid-community";
 
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 interface TableProps {
   gridRef: any;
